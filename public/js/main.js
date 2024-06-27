@@ -54,7 +54,7 @@
 			.appendTo($head);
 
 	// Toggle.
-	toggle($, $sidebar)
+	//toggle($, $sidebar)
 
 	// Events.
 
