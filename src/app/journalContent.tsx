@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { JournalDay, JournalMonth } from './model/JournalModel';
-import Markdown from 'react-markdown'
 
 export default function JournalContent() {
 
