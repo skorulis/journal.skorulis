@@ -4,11 +4,14 @@ import { JournalDay, JournalMonth } from './model/JournalModel';
 
 export default function JournalContent() {
 
+    const dataURL = "https://pub-02a71505f3f24f5db7e61eab54a48a69.r2.dev/"
+
     const [data, setData] = useState<JournalMonth|undefined>(undefined);
 
     useEffect(() => {
+        let url = dataURL + "june2024.json"
         // If you're using Create React App and the file is in the public folder
-        fetch('june2024.json')
+        fetch(url)
           .then(response => {
             if (!response.ok) {
               throw new Error('Network response was not ok');
