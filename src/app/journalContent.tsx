@@ -9,7 +9,7 @@ export default function JournalContent() {
     const [data, setData] = useState<JournalMonth|undefined>(undefined);
 
     useEffect(() => {
-        let url = dataURL + "june2024.json"
+        let url = dataURL + "2024/june.json"
         // If you're using Create React App and the file is in the public folder
         fetch(url)
           .then(response => {
