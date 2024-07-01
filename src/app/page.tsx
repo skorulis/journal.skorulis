@@ -1,5 +1,5 @@
 "use client";
-import Menu from "./menu";
+import SideNav from "./ui/sidenav";
 import JournalContent from "./journalContent";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
 					<div id="main">
 						<div className="inner">
 								<header id="header">
-									<a href="index.html" className="logo"><strong>bujo</strong>.skorulis.com</a>
+									<a href="index.html" className="logo"><strong>journal</strong>.skorulis.com</a>
 									<ul className="icons">
 										<li><a href="https://www.facebook.com/skorulis/" className="icon brands fa-facebook-f"><span className="label">Facebook</span></a></li>
 										<li><a href="https://www.instagram.com/skorulis" className="icon brands fa-instagram"><span className="label">Instagram</span></a></li>
@@ -24,7 +24,7 @@ export default function Home() {
 								</section>
 						</div>
 					</div>
-          {Menu()}
+          {SideNav()}
       </div>
     </main>
   );

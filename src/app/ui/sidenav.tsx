@@ -1,25 +1,18 @@
-export default function Menu() {
+export default function SideNav() {
     return (
         <div id="sidebar">
             <div className="inner">
-                    <section id="search" className="alt">
-                        <form method="post" action="#">
-                            <input type="text" name="query" id="query" placeholder="Search" />
-                        </form>
-                    </section>
                     <nav id="menu">
                         <header className="major">
                             <h2>Menu</h2>
                         </header>
                         <ul>
-                            <li><a href="index.html">Homepage</a></li>
+                            <li><a href="/">Home</a></li>
                             <li>
-                                <span className="opener">Submenu</span>
+                                <span className="opener">2024</span>
                                 <ul>
-                                    <li><a href="#">Lorem Dolor</a></li>
-                                    <li><a href="#">Ipsum Adipiscing</a></li>
-                                    <li><a href="#">Tempus Magna</a></li>
-                                    <li><a href="#">Feugiat Veroeros</a></li>
+                                    <li><a href="#">June</a></li>
+                                    <li><a href="#">July</a></li>
                                 </ul>
                             </li>
                         </ul>
