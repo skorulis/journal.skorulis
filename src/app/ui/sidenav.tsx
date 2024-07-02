@@ -11,14 +11,14 @@ export default function SideNav() {
                             <li>
                                 <span className="opener">2024</span>
                                 <ul>
-                                    <li><a href="#">June</a></li>
-                                    <li><a href="#">July</a></li>
+                                    <li><a href="/june2024">June</a></li>
+                                    <li><a href="/july2024">July</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </nav>
                     <footer id="footer">
-                        <p className="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+                        <p className="copyright">&copy; Alex Skorulis. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
                     </footer>
 
             </div>

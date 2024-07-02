@@ -1,8 +1,12 @@
-"use client";
-import SideNav from "./ui/sidenav";
-import {JournalContent} from "./ui/journalContent";
+import {JournalContent} from "../ui/journalContent";
 
-export default function Home() {
+export function generateStaticParams() {
+    return [{monthyear: "june2024"}, {monthyear: "july2024"}]
+  }
+
+import SideNav from "../ui/sidenav";
+
+export default function MonthPage() {
 
   return (
     <main>
@@ -20,7 +24,7 @@ export default function Home() {
 								</header>
 								<section id="banner">
 									<div className="content">
-										{JournalContent()}
+                                    
 									</div>
 								</section>
 						</div>

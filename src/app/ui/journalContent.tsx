@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { JournalDay, JournalMonth } from './model/JournalModel';
+import { JournalDay, JournalMonth } from '../model/JournalModel';
 
-export default function JournalContent() {
+export function JournalContent(params: {filename: string}) {
 
     const dataURL = "https://pub-02a71505f3f24f5db7e61eab54a48a69.r2.dev/"
 
