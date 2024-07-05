@@ -24,7 +24,7 @@ export default function MonthPage() {
 								</header>
 								<section id="banner">
 									<div className="content">
-                                    {Journal({filename: "june2024.json"})}
+                                    {Journal({filename: "june2024"})}
 									</div>
 								</section>
 						</div>

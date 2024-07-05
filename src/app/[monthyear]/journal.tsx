@@ -1,9 +1,8 @@
 
-import { promises as fs } from 'fs';
 import { JournalDay, JournalMonth } from '../model/JournalModel';
 
 export async function Journal(params: {filename: string}) {
-    const data = await getData()
+    const data = await getData(params.filename)
     
     return <div>
         {JournalMonthContent(data)}
@@ -56,9 +55,12 @@ function JournalDayContent(day: JournalDay) {
     </div>
 }
 
-async function getData(): JournalMonth {
-    const res = await fetch("https://pub-02a71505f3f24f5db7e61eab54a48a69.r2.dev/2024/july.json");
+async function getData(path: string): Promise<JournalMonth> {
+    const res = await fetch(
+        `https://pub-02a71505f3f24f5db7e61eab54a48a69.r2.dev/${path}.json`,
+        { cache: 'no-store' }
+    );
     console.log(res)
-    const data = await res.json();
+    const data = await res.json()
     return data;
 }

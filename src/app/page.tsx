@@ -1,6 +1,5 @@
 "use client";
 import SideNav from "./ui/sidenav";
-import {JournalContent} from "./ui/journalContent";
 
 export default function Home() {
 
@@ -20,7 +19,7 @@ export default function Home() {
 								</header>
 								<section id="banner">
 									<div className="content">
-										{JournalContent()}
+										
 									</div>
 								</section>
 						</div>
