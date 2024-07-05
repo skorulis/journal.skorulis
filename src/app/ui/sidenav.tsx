@@ -13,6 +13,7 @@ export default function SideNav() {
                                 <ul>
                                     <li><a href="/june2024">June</a></li>
                                     <li><a href="/july2024">July</a></li>
+                                    <li><a href="/august2024">August</a></li>
                                 </ul>
                             </li>
                         </ul>

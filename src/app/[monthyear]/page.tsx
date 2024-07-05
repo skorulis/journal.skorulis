@@ -1,15 +1,12 @@
 import {Journal} from "./journal";
-import { useRouter } from 'next/router'
 
 export function generateStaticParams() {
-    return [{monthyear: "june2024"}, {monthyear: "july2024"}]
+    return [{monthyear: "june2024"}, {monthyear: "july2024"}, {monthyear: "august2024"}]
   }
 
 import SideNav from "../ui/sidenav";
 
-export default function MonthPage({
-	params,
-  }: {
+export default function MonthPage({params}: {
 	params: { monthyear: string};
   }) {
 
