@@ -1,28 +1,12 @@
-"use client";
-import React, { useState, useEffect } from 'react';
+
+import { promises as fs } from 'fs';
 import { JournalDay, JournalMonth } from '../model/JournalModel';
 
-export function JournalContent(params: {filename: string}) {
-
-    const dataURL = "https://pub-02a71505f3f24f5db7e61eab54a48a69.r2.dev/"
-
-    const [data, setData] = useState<JournalMonth|undefined>(undefined);
-
-    useEffect(() => {
-        let url = dataURL + "2024/june.json"
-        fetch(url)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.json();
-          })
-          .then(data => setData(data))
-          .catch(error => console.error('There has been a problem with your fetch operation:', error));
-      }, []);
-
+export async function Journal(params: {filename: string}) {
+    const data = await getData()
+    
     return <div>
-        {data && JournalMonthContent(data) }
+        {JournalMonthContent(data)}
     </div>
 }
 
@@ -70,4 +54,11 @@ function JournalDayContent(day: JournalDay) {
         </ul>
         
     </div>
+}
+
+async function getData(): JournalMonth {
+    const res = await fetch("https://pub-02a71505f3f24f5db7e61eab54a48a69.r2.dev/2024/july.json");
+    console.log(res)
+    const data = await res.json();
+    return data;
 }

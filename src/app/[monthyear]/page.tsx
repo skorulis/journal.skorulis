@@ -1,4 +1,4 @@
-import {JournalContent} from "../ui/journalContent";
+import {Journal} from "./journal";
 
 export function generateStaticParams() {
     return [{monthyear: "june2024"}, {monthyear: "july2024"}]
@@ -24,7 +24,7 @@ export default function MonthPage() {
 								</header>
 								<section id="banner">
 									<div className="content">
-                                    
+                                    {Journal({filename: "june2024.json"})}
 									</div>
 								</section>
 						</div>
