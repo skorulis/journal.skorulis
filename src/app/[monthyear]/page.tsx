@@ -26,7 +26,7 @@ export default function MonthPage({params}: {
 								</header>
 								<section id="banner">
 									<div className="content">
-                                    {params.monthyear}
+                                    {Journal({filename: params.monthyear})}
 									</div>
 								</section>
 						</div>
