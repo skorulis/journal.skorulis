@@ -1,8 +1,11 @@
 
 import { JournalDay, JournalMonth } from '../model/JournalModel';
+import { promises as fs } from 'fs';
 
 export async function Journal(params: {filename: string}) {
-    const data = await getData(params.filename)
+    //const data = await getData(params.filename)
+    const file = await fs.readFile(process.cwd() + "/public/june2024.json", 'utf8')
+    const data = JSON.parse(file);
     
     return <div>
         {JournalMonthContent(data)}
