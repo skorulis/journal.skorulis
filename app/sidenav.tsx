@@ -1,3 +1,7 @@
+import {
+    Link,
+  } from "@remix-run/react";
+
 export default function SideNav() {
     return (
         <div id="sidebar">
@@ -7,13 +11,13 @@ export default function SideNav() {
                             <h2>Menu</h2>
                         </header>
                         <ul>
-                            <li><a href="/">Home</a></li>
+                            <li><Link to="/">Home</Link></li>
                             <li>
                                 <span className="opener">2024</span>
                                 <ul>
-                                    <li><a href="/june2024">June</a></li>
-                                    <li><a href="/july2024">July</a></li>
-                                    <li><a href="/august2024">August</a></li>
+                                    <li><Link to="/june2024">June</Link></li>
+                                    <li><Link to="/july2024">July</Link></li>
+                                    <li><Link to="/august2024">August</Link></li>
                                 </ul>
                             </li>
                         </ul>

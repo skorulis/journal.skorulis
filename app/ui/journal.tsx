@@ -1,18 +1,7 @@
 
 import { JournalDay, JournalMonth } from '../model/JournalModel';
-import { promises as fs } from 'fs';
 
-export async function Journal(params: {filename: string}) {
-    //const data = await getData(params.filename)
-    const file = await fs.readFile(process.cwd() + "/public/june2024.json", 'utf8')
-    const data = JSON.parse(file);
-    
-    return <div>
-        {JournalMonthContent(data)}
-    </div>
-}
-
-function JournalMonthContent(month: JournalMonth) {
+export default function Journal(month: JournalMonth) {
 
     return <div>
         <h1>{month.title}</h1>
@@ -45,7 +34,7 @@ function JournalDayContent(day: JournalDay) {
         return formatted + ordinal
     }
 
-    return <div>
+    return <div key={day.date}>
         <h2>{formattedDate()}</h2>
         <ul>
         {
@@ -56,14 +45,4 @@ function JournalDayContent(day: JournalDay) {
         </ul>
         
     </div>
-}
-
-async function getData(path: string): Promise<JournalMonth> {
-    const res = await fetch(
-        `https://pub-02a71505f3f24f5db7e61eab54a48a69.r2.dev/${path}.json`,
-        { cache: 'no-store' }
-    );
-    console.log(res)
-    const data = await res.json()
-    return data;
 }
