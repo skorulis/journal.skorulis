@@ -1,10 +1,24 @@
-"use client";
-import SideNav from "./ui/sidenav";
+import {
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from "@remix-run/react";
+import "./assets/css/main.css";
+import SideNav from "./sidenav";
 
-export default function Home() {
-
+export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <main>
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <Links />
+      </head>
+      <body>
+      <main>
       
       <div id="wrapper">
 					<div id="main">
@@ -19,10 +33,7 @@ export default function Home() {
 								</header>
 								<section id="banner">
 									<div className="content">
-										<h2>Journal</h2>
-										<p>This is a mix of my journal, calendar todo list all put together that I keep in notion pages which are then scraped into this web version. 
-											I don't have a good reason why I did this, it just seemed like a good idea at the time.
-										</p>
+                    {children}
 									</div>
 								</section>
 						</div>
@@ -30,5 +41,19 @@ export default function Home() {
           {SideNav()}
       </div>
     </main>
+        
+        <ScrollRestoration />
+        <Scripts />
+        <script src="js/jquery.min.js"></script>
+			  <script src="js/browser.min.js"></script>
+			  <script src="js/breakpoints.min.js"></script>
+			  <script src="js/util.js"></script>
+			  <script src="js/main.js"></script>  
+      </body>
+    </html>
   );
+}
+
+export default function App() {
+  return <Outlet />;
 }
