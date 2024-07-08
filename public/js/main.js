@@ -67,7 +67,7 @@
 	scrollLock($window, $sidebar)
 
 	// Menu. Openers
-	openers($, $window)
+	// openers($, $window)
 
 })(jQuery);
 

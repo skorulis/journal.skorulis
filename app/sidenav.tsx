@@ -1,8 +1,18 @@
+import React from "react";
+
 import {
     Link,
   } from "@remix-run/react";
 
 export default function SideNav() {
+    const [isOpen, setIsOpen] = React.useState(false);
+    function openerClass(): string {
+        return isOpen ? "opener active" : "opener"
+    }
+    function toggleMenu() {
+        setIsOpen((open) => !open)
+    }
+
     return (
         <div id="sidebar">
             <div className="inner">
@@ -13,7 +23,7 @@ export default function SideNav() {
                         <ul>
                             <li><Link to="/">Home</Link></li>
                             <li>
-                                <span className="opener">2024</span>
+                                <span className={openerClass()} onClick={toggleMenu}>2024</span>
                                 <ul>
                                     <li><Link to="/june2024">June</Link></li>
                                     <li><Link to="/july2024">July</Link></li>
