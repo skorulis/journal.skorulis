@@ -1,20 +1,34 @@
 import React from "react";
+import { useMediaQuery } from 'react-responsive';
 
 import {
     Link,
   } from "@remix-run/react";
 
 export default function SideNav() {
+    const startOpen = useMediaQuery({ query: '(min-width: 768px)' });
     const [isOpen, setIsOpen] = React.useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = React.useState(startOpen);
+
     function openerClass(): string {
         return isOpen ? "opener active" : "opener"
     }
+    function sidebaseClass(): string {
+        return isSidebarOpen ? "" : "inactive"
+    }
+
     function toggleMenu() {
         setIsOpen((open) => !open)
     }
+    function toggleSidebar() {
+        setIsSidebarOpen((open) => !open)
+    }
+
 
     return (
-        <div id="sidebar">
+        <div id="sidebar" className={sidebaseClass()}>
+            <a className="toggle" onClick={toggleSidebar}>Toggle</a>
+
             <div className="inner">
                     <nav id="menu">
                         <header className="major">

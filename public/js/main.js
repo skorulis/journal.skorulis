@@ -38,15 +38,6 @@
 	// Sidebar.
 	let $sidebar = $('#sidebar')
 
-	// Inactive by default on <= large.
-	breakpoints.on('<=large', function() {
-		$sidebar.addClass('inactive');
-	});
-
-	breakpoints.on('>large', function() {
-		$sidebar.removeClass('inactive');
-	});
-
 	// Hack: Workaround for Chrome/Android scrollbar position bug.
 	if (browser.os == 'android'
 	&&	browser.name == 'chrome')
@@ -54,7 +45,7 @@
 			.appendTo($head);
 
 	// Toggle.
-	//toggle($, $sidebar)
+	toggle($, $sidebar)
 
 	// Events.
 
