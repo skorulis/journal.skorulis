@@ -42,6 +42,7 @@ export default function SideNav() {
                                     <li><Link to="/june2024">June</Link></li>
                                     <li><Link to="/july2024">July</Link></li>
                                     <li><Link to="/august2024">August</Link></li>
+                                    <li><Link to="/september2024">September</Link></li>
                                 </ul>
                             </li>
                         </ul>
